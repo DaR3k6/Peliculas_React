@@ -2,8 +2,9 @@ import Cabecera from "./components/cabecera";
 import Final from "./components/footer";
 import LateralAside from "./components/lateral";
 import Media from "./components/medio";
-
+import { useState } from "react";
 const App = () => {
+  const [datos, setDatos] = useState([]);
   return (
     <>
       <div className="header_section">
@@ -19,18 +20,17 @@ const App = () => {
             </div>
             <div className="row mt-12">
               <div className="col-md-9">
-                <Media />
+                <Media datos={datos} setDatos={setDatos} />
               </div>
               <div className="col-md-3">
                 <aside className="lado">
-                  <LateralAside />
+                  <LateralAside datos={datos} setDatos={setDatos} />
                 </aside>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <footer>
         <Final />
       </footer>

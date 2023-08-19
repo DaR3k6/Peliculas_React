@@ -548,6 +548,8 @@ blockquote {
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 10px;
 }
 
 .card:hover {
@@ -559,13 +561,7 @@ blockquote {
   transition: transform 0.5s;
 }
 
-.card-img-top {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 10px;
-  transition: transform 0.5s;
-}
-
-.card:hover .card-body .card-img-top {
+.card:hover .card-body {
   transform: scale(1.1);
 }
 
@@ -587,9 +583,8 @@ blockquote {
 /* Estilos para pantallas más pequeñas (hasta 576px) */
 @media screen and (max-width: 576px) {
   .card {
-    width: 90%; /* Reduce el ancho de la tarjeta para pantallas pequeñas */
-    margin-right: auto; /* Centra horizontalmente en pantallas pequeñas */
-    margin-left: auto; /* Centra horizontalmente en pantallas pequeñas */
+    width: 90%;
+    margin: 0 auto; /* Centra horizontalmente en pantallas pequeñas */
   }
 }
 .titulo {
@@ -601,6 +596,15 @@ blockquote {
 }
 .titulo:hover {
   opacity: 1;
+  transform: scale(1.1);
+}
+.error {
+  width: 40%;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+.error:hover {
   transform: scale(1.1);
 }
 /* Estilos para el contenedor lateral */

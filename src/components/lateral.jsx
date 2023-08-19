@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import FrmAgregar from "./FrmAgregar";
 import FrmBusqueda from "./FrmBusqueda";
 
-const LateralAside = () => {
+const LateralAside = ({ datos, setDatos }) => {
   const [navegacion, setNavegacion] = useState("");
   const [titulo, setTitulo] = useState("");
 
-  const cambiarTituloNavegacion = tab => {
-    setNavegacion(tab);
-    setTitulo(tab === "busqueda" ? "Búsqueda" : "Agregar");
+  const cambiarTituloNavegacion = click => {
+    setNavegacion(click);
+    setTitulo(click === "busqueda" ? "Búsqueda" : "Agregar");
   };
 
   const navegacionFormulario = () => {
     if (navegacion === "busqueda") {
       return <FrmBusqueda />;
     } else if (navegacion === "agregar") {
-      return <FrmAgregar />;
+      return <FrmAgregar datos={datos} setDatos={setDatos} />;
     }
   };
 
