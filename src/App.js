@@ -1,4 +1,5 @@
 import Cabecera from "./components/cabecera";
+import Final from "./components/footer";
 import LateralAside from "./components/lateral";
 import Media from "./components/medio";
 
@@ -12,8 +13,8 @@ const App = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-              <div className="titulo text-center">
-                <h1>CARTELERA</h1>
+              <div className="titulo text-start text-light-emphasis ">
+                <h1>PELICULAS RECIENTES</h1>
               </div>
             </div>
             <div className="row mt-12">
@@ -30,7 +31,9 @@ const App = () => {
         </div>
       </section>
 
-      <footer></footer>
+      <footer>
+        <Final />
+      </footer>
     </>
   );
 };

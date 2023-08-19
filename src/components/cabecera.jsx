@@ -6,22 +6,23 @@ const Cabecera = () => {
     const myCarouselElement = document.querySelector("#carusel");
 
     const carousel = new Carousel(myCarouselElement, {
-      interval: 2000,
+      interval: 3000,
       touch: false,
     });
-
-    return () => {
-      carousel.dispose();
-    };
+    return carousel;
   }, []);
 
   return (
     <>
       <div className="header_main">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="logo">
+          <div className="logo ">
             <a href="index.html">
-              <img src="./images/logo.png" alt="Logo" />
+              <img
+                src="./images/logo.png"
+                className="logoPrincipal"
+                alt="Logo"
+              />
             </a>
           </div>
 
@@ -40,73 +41,68 @@ const Cabecera = () => {
             <ul className="navbar-nav menu_main">
               <li className="nav-item">
                 <a className="nav-link" href="www.test.com">
-                  Home
+                  INICIO
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="www.test.com">
-                  About
+                  SERVICIOS
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-center" href="www.test.com">
+                  PELICULAS
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="www.test.com">
-                  Services
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="www.test.com">
-                  Blog
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="www.test.com">
-                  Contact
+                  CONTACTANOS
                 </a>
               </li>
             </ul>
           </div>
         </nav>
-      </div>
-
-      <div className="banner_section layout_padding">
         <div id="carusel" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <div className="container">
-                <img
-                  src="./images/blog-mobile-bg.png"
-                  className="d-block w-100"
-                  alt="imagen"
-                />
-              </div>
+              <img
+                src="./images/pelicula1.png"
+                className="d-block w-100"
+                alt="imagen1"
+              />
             </div>
             <div className="carousel-item">
-              <div className="container">
-                <h1 className="banner_taital">Adventure</h1>
-                <p className="banner_text">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered There are ma
-                  available, but the majority have suffered
-                </p>
-                <div className="read_bt">
-                  <a href="www.test.com">Get A Quote</a>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="container">
-                <h1 className="banner_taital">Adventure</h1>
-                <p className="banner_text">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered There are ma
-                  available, but the majority have suffered
-                </p>
-                <div className="read_bt">
-                  <a href="www.test.com">Get A Quote</a>
-                </div>
-              </div>
+              <img
+                src="./images/pelicula1.png"
+                className="d-block w-100"
+                alt="imagen2"
+              />
             </div>
           </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carusel"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carusel"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </>
