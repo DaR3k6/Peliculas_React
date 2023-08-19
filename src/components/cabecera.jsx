@@ -1,16 +1,24 @@
 import React, { useEffect } from "react";
+
 import { Carousel } from "bootstrap";
 
 const Cabecera = () => {
   useEffect(() => {
     const myCarouselElement = document.querySelector("#carusel");
 
-    const carousel = new Carousel(myCarouselElement, {
+    new Carousel(myCarouselElement, {
       interval: 3000,
       touch: false,
     });
-    return carousel;
   }, []);
+
+  const imagenes = [
+    "pelicula1.png",
+    "pelicula2.png",
+    "pelicula3.png",
+    "pelicula4.png",
+    "pelicula5.png",
+  ];
 
   return (
     <>
@@ -34,9 +42,7 @@ const Cabecera = () => {
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          ></button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav menu_main">
               <li className="nav-item">
@@ -64,20 +70,22 @@ const Cabecera = () => {
         </nav>
         <div id="carusel" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src="./images/pelicula1.png"
-                className="d-block w-100"
-                alt="imagen1"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="./images/pelicula1.png"
-                className="d-block w-100"
-                alt="imagen2"
-              />
-            </div>
+            {imagenes.map((imagen, index) => {
+              return (
+                <div
+                  key={index}
+                  className={
+                    index === 0 ? "carousel-item active" : "carousel-item"
+                  }
+                >
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/${imagen}`}
+                    className="d-block w-100"
+                    alt={`Imgaen ${index}`}
+                  />
+                </div>
+              );
+            })}
           </div>
           <button
             className="carousel-control-prev"

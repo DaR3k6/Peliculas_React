@@ -8,7 +8,7 @@ const FrmAgregar = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="NOMBRE"
+            placeholder="Nombre"
             id="nombre"
           />
         </div>
@@ -16,14 +16,14 @@ const FrmAgregar = () => {
         <div className="mb-3">
           <textarea
             className="form-control"
-            placeholder="DESCRIPCION"
+            placeholder="Descripción"
             id="descripcion"
             rows="4"
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Agregar
+        <button type="submit" className="btn btn-outline-success">
+          AGREGAR
         </button>
       </form>
     </>

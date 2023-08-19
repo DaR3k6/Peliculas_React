@@ -13,18 +13,14 @@ const Media = () => {
                   className="card-img-top"
                   alt="imagen"
                 />
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
+                <h5 className="card-title">TITULO</h5>
+                <p className="card-text">DESCRIPCION</p>
                 <div className="card-footer d-flex justify-content-between">
-                  <button type="button" className="btn btn-primary btn-sm">
-                    Small button
+                  <button type="button" className="btn btn-outline-success">
+                    EDITAR
                   </button>
-                  <button type="button" className="btn btn-secondary btn-sm">
-                    Small button
+                  <button type="button" className="btn btn-outline-danger ">
+                    BORRAR
                   </button>
                 </div>
               </div>

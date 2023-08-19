@@ -8,13 +8,13 @@ const FrmBusqueda = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="BUSCAR"
+            placeholder="Busqueda"
             id="busqueda"
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Buscar
+        <button type="submit" className="btn btn-outline-success">
+          BUSCAR
         </button>
       </form>
     </>
