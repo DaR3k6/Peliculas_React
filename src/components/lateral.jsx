@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FrmAgregar from "./FrmAgregar";
 import FrmBusqueda from "./FrmBusqueda";
 
-const LateralAside = ({ datos, setDatos }) => {
+const LateralAside = ({ pelicula, datos, setDatos }) => {
   const [navegacion, setNavegacion] = useState("");
   const [titulo, setTitulo] = useState("");
 
@@ -13,7 +13,7 @@ const LateralAside = ({ datos, setDatos }) => {
 
   const navegacionFormulario = () => {
     if (navegacion === "busqueda") {
-      return <FrmBusqueda />;
+      return <FrmBusqueda datos={datos} setDatos={setDatos} />;
     } else if (navegacion === "agregar") {
       return <FrmAgregar datos={datos} setDatos={setDatos} />;
     }

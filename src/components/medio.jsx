@@ -1,6 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import FrmEditar from "./FrmEditar";
 
 const Media = ({ datos, setDatos }) => {
+  //Valido traer el modal junto con la pelicula
+  const [editar, setEditar] = useState(false);
+  const [selecionpelicula, setSeleccion] = useState(null);
   //Leer el localStorage
   useEffect(() => {
     let pelicula = JSON.parse(localStorage.getItem("pelicula"));
@@ -11,6 +15,11 @@ const Media = ({ datos, setDatos }) => {
     let bdNueva = datos.filter(pelicula => pelicula.id !== parseInt(id));
     setDatos(bdNueva);
     localStorage.setItem("pelicula", JSON.stringify(bdNueva));
+  };
+  //Funcion del modal
+  const abrirModal = pelicula => {
+    setSeleccion(pelicula);
+    setEditar(true);
   };
 
   return (
@@ -34,6 +43,11 @@ const Media = ({ datos, setDatos }) => {
                           <button
                             type="button"
                             className="btn btn-outline-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editar"
+                            onClick={() => {
+                              abrirModal(pelicula);
+                            }}
                           >
                             EDITAR
                           </button>
@@ -52,6 +66,14 @@ const Media = ({ datos, setDatos }) => {
                   </div>
                 );
               })}
+              {editar && selecionpelicula && (
+                <FrmEditar
+                  datos={datos}
+                  setDatos={setDatos}
+                  pelicula={selecionpelicula}
+                  onClose={() => setEditar(false)}
+                />
+              )}
             </>
           )}
         </div>
