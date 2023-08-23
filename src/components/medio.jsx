@@ -34,7 +34,7 @@ const Media = ({ datos, setDatos }) => {
     <>
       <div className="container-fluid">
         <div className="row row-cols-2 row-cols-md-2 g-5">
-          {datos.length === 0 || datos == null ? (
+          {datos == null ? (
             <h1 className="error">NO HAY PELICULAS DISPONIBLES</h1>
           ) : (
             <>
